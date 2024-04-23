@@ -7,11 +7,11 @@ create table if not exists spotify_genres (
     last_updated_datetime_utc timestamp,
     primary key (artist_id)
 );
--- drop table spotify_genres;
--- create table if not exists spotify_genres (
---     artist_id text,
---     artist_name text,
---     artist_genre text,
---     last_updated_datetime_utc timestamp,
---     primary key (artist_id)
--- );
+drop table spotify_genres;
+create table if not exists spotify_genres (
+    artist_id text,
+    artist_name text,
+    artist_genre text,
+    last_updated_datetime_utc timestamp,
+    primary key (artist_id)
+);
