@@ -67,6 +67,7 @@ services:
       - env
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./operators:/opt/airflow/operators
       - ./airflow_data:/tmp
     command: bash -c '(airflow db init && airflow users create --username admin --password admin --firstname Htd --lastname Coserv --role Admin --email kl@gmail.com); airflow webserver & airflow scheduler'
 

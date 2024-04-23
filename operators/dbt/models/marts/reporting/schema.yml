@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: rpt_most_listened
+    description: "Most listened artists and tracks"
+    columns:
+      - name: (artist_name || song_name || song_link)
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: rpt_recently_listened
+    description: "Recently listened artists and tracks"
+    columns:
+      - name: played_at
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: rpt_weekly_discovers
+    description: "New artists discovered in the current week"
+    columns:
+      - name: artist_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: rpt_hour_of_week
+    description: "Hour of week heatmap on listening activity"
+    columns:
+      - name: (played_at_day_of_week || played_at_hour)
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
